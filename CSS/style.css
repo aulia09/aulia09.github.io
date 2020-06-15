@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #131313;
+  font-size: 18px;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+/* .content {
+    display: grid;
+    gap: 50px;
+} */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.judul {
+  color: white;
+  font-size: 2em;
+  margin: 50px;
+  text-align: center;
+}
+
+/* NAVBAR */
+#navbar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.4s;
+}
+
+nav {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  padding: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: top 0.4s;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-around;
+}
+
+nav ul li a {
+  color: rgb(252, 252, 252);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+nav ul li a:hover {
+  color: rgb(9, 79, 230);
+}
+
+nav ul li a::after {
+  color: rgb(9, 79, 230);
+  border-bottom: 2px solid rgb(9, 79, 230);
+}
+
+.logo img {
+  width: 80%;
+}
+
+/* Menu Toggle */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0.8;
+  left: -5px;
+  top: -3px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.5s;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Menu HAmburger */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+/* HOme */
+.home {
+  min-height: 100vh;
+  background-image: url("../Aset/bekron.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home .background {
+  min-height: 100vh;
+}
+
+.home .content-home {
+  display: flex;
+  max-width: 100%;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.home .content-home .box-detail {
+  flex: 0 0 75%;
+  max-width: 75%;
+  padding: 35px;
+  border-left: 5px solid white;
+}
+
+.home .content-home .box-detail h1 {
+  color: rgb(9, 79, 230);
+  font-size: 3.1em;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.home .content-home .box-detail h6 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.home .content-home .box-detail h3 {
+  margin: 0;
+  padding: 0;
+  color: #bfbfbf;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.home .content-home .box-detail .email-me {
+  padding-top: 15px;
+}
+
+.home .content-home .box-detail .email-me a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(9, 79, 230);
+  padding: 15px 30px;
+}
+
+.home .content-home .box-detail .email-me a:hover {
+  opacity: 0.6;
+}
+
+/* About Me */
+.about-me-detail {
+  border-radius: 15px;
+  padding: 50px;
+  margin-top: -10px;
+  z-index: 1000;
+}
+
+/* Portofolio */
+
+.my-portofolio {
+  padding: 50px 50px;
+}
+
+.portofolio {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    "hero feature-1"
+    "hero feature-2"
+    "feature-3 hero1"
+    "feature-4 hero1";
+}
+
+.judul {
+  color: white;
+  font-size: 2em;
+  margin: 50px;
+  text-align: center;
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 500px;
+  background-image: url(../Aset/portofolio1.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.hero1 {
+  grid-area: hero1;
+  min-height: 500px;
+  background-image: url(../Aset/portofolio.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.features {
+  display: grid;
+  place-content: center;
+  border-radius: 15px;
+}
+
+.feature-1 {
+  grid-area: feature-1;
+  background-image: url(../Aset/portofolio2.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+
+.feature-2 {
+  grid-area: feature-2;
+  background-image: url(../Aset/portofolio3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-3 {
+  grid-area: feature-3;
+  background-image: url(../Aset/portofolio4.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-4 {
+  grid-area: feature-4;
+  background-image: url(../Aset/portofolio5.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* About ME */
+
+.about-me {
+  padding: 100px 50px 50px;
+}
+
+.about-me .about-content {
+  background-color: #201f1f;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.about-me .about-content .image {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding-right: 10px;
+}
+
+.about-me .about-content .image img {
+  width: 100%;
+  display: block;
+}
+
+.about-me .about-content .detail-text {
+  flex: 0 0 66.66%;
+  max-width: 66.66%;
+}
+
+.about-me .about-content .detail-text h4 {
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 10px;
+  margin: 0 0 5px;
+  color: rgb(9, 79, 230);
+}
+
+.about-me .about-content .detail-text h6 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: #ffbd33;
+}
+
+.about-me .about-content .detail-text p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #bfbfbf;
+  margin: 0 0 15px;
+}
+
+.about-me .about-content .detail-text .information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.about-me .about-content .detail-text .information .info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  flex: 0 0 calc(50% - 50px);
+  max-width: calc(50% - 50px);
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.about-me .about-content .detail-text .information .info label {
+  padding-right: 10px;
+  color: rgb(9, 79, 230);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.about-me .about-content .detail-text .information .info .gmail {
+  font-size: 8px;
+}
+
+.about-me .about-content .detail-text .social-media {
+  padding-top: 20px;
+}
+
+.about-me .about-content .detail-text .social-media a {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  line-height: 28px;
+  text-align: center;
+  margin: 0 1px;
+  transition: all 0.3s ease;
+}
+
+.about-me .about-content .detail-text .social-media a:hover {
+  background-color: transparent;
+}
+
+.about-me .about-content .detail-text .social-media .fa {
+  color: black;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.about-me .about-content .detail-text .social-media .fa:hover {
+  color: white;
+}
+
+.my-tools {
+  background-color: #201f1f;
+  padding: 0px 50px 50px;
+}
+
+.my-tools .tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  place-items: center;
+  gap: 1em;
+}
+
+.my-tools .tools img {
+  width: 50%;
+}
+
+.tool-n-skill {
+  font-size: 1em;
+  padding: 40px 0 0;
+  color: #bfbfbf;
+}
+
+.footer {
+  background-color: #161616;
+  background-image: url("https://ml0eehlclbti.i.optimole.com/n_d9yNU-2OBBHcx5/w:auto/h:auto/q:90/https://kukuhaldy.com/wp-content/uploads/2019/11/footer-decoration.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 50px 50px;
+}
+
+.footer h1 {
+  color: white;
+  font-size: 2em;
+}
+
+.footer p {
+  color: #bfbfbf;
+}
+
+.footer p span {
+  color: white;
+}
+
+.footer a {
+  color: #bfbfbf;
+}
+
+.sosmed .fa {
+  padding: 30px 50px 0 0;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.sosmed a:hover {
+  color: white;
+}
